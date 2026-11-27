@@ -43,18 +43,18 @@ void printDashboard(const commodity commodities[])
         printf("| %-13s | ", commodities[i].name.c_str());
 
         if (commodities[i].priceTrend == 1)
-            printf("\033[;32m%7.2lf↑\033[0m", commodities[i].price);
+            printf("\033[32m%7.2lf↑\033[0m", commodities[i].price);
         else if (commodities[i].priceTrend == -1)
-            printf("\033[;31m%7.2lf↓\033[0m", commodities[i].price);
+            printf("\033[31m%7.2lf↓\033[0m", commodities[i].price);
         else
             printf("%7.2lf ", commodities[i].price);
 
         printf(" | ");
 
         if (commodities[i].avgTrend == 1)
-            printf("\033[;32m%7.2lf↑\033[0m", commodities[i].avgPrice);
+            printf("\033[32m%7.2lf↑\033[0m", commodities[i].avgPrice);
         else if (commodities[i].avgTrend == -1)
-            printf("\033[;31m%7.2lf↓\033[0m", commodities[i].avgPrice);
+            printf("\033[31m%7.2lf↓\033[0m", commodities[i].avgPrice);
         else
             printf("%7.2lf ", commodities[i].avgPrice);
 

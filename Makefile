@@ -9,4 +9,4 @@ consumer: consumer.cpp
 	g++ -Wall -std=c++20 consumer.cpp -o consumer -pthread -lrt
 
 cleanup:
-	rm -f producer consumer
+	rm -f producer consumer /dev/shm/shared_buffer

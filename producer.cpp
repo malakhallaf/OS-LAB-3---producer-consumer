@@ -43,13 +43,14 @@ if (argc != 6)
     return 1;
 }
 
+char *end1, *end2, *end3, *end4;
 const char* commodity = argv[1];
-double mean = std::atof(argv[2]);
-double stddev = std::atof(argv[3]);
-int sleep_ms = std::atoi(argv[4]);
-int N = std::atoi(argv[5]);
+double mean = std::strtod(argv[2], &end1);
+double stddev = std::strtod(argv[3], &end2);
+int sleep_ms = std::strtol(argv[4], &end3, 10);
+int N = std::strtol(argv[5], &end4, 10);
 
-if (N <= 0 || sleep_ms < 0 || stddev < 0)
+if (*end1 != '\0' || *end2 != '\0' || *end3 != '\0' || *end4 != '\0' || N <= 0 || sleep_ms < 0 || stddev < 0)
 {
     fprintf(stderr, "invalid arguments\n");
     return 1;
